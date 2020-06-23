@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 body{
@@ -10,6 +9,26 @@ body{
     min-height: 100vh;
     flex-direction: column;
     background-color:
+}
+.main a{
+  display: block;
+  position: fixed;
+  font-size: 1.8rem;
+  top: 7%;
+  right: 5%;
+  cursor: pointer;
+  z-index: 3;
+  }
+.main i{
+    position: absolute;
+     width: 30px;
+    height: 30px;
+    top: 2rem;
+    right: 4rem;
+    font-size: 3rem;
+    color: green;
+
+    display: block;
 }
 
 a{
@@ -23,12 +42,15 @@ ul{
 .nav-wrapper{
     background: url('./images/eko_city.jpg');
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     height: 401px;
+    z-index: 1;
 }
 main{
     width: 100%;

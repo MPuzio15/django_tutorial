@@ -8,7 +8,7 @@ from .models import Question, Choice
 
 def index(request):
     questions = Question.objects.all()
-    title = "Wypełnij ankietę i sprawdź, czy prowadzisz ekologiczny styl życia"
+    title = "Wypełnij ankietę i sprawdź, czy prowadzisz ekologiczny tryb życia"
     context = {
         "questions": questions,
         "title": title,

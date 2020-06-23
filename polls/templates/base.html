@@ -5,14 +5,15 @@
 <head>
     <meta charset="UTF-8">
     <title>EkoDom Ankieta &bull; {{ title }}</title>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
 </head>
 <body>
 
 <nav>
+    <a href="{% url 'polls:main' %}" class="main"><i class="fas fa-leaf"></i></a>
     <div class="nav-wrapper">
         <a href="{% url 'polls:main' %}" class="brand-logo">EkoDom</a>
-
     </div>
 </nav>
 
@@ -21,7 +22,7 @@
     {% block content %}
     {% endblock %}
 </main>
-<footer>
+ <footer>
     <ul>
         <li><a class="link" href="https://www.tekstualna.pl/less-waste-dla-poczatkujacych/">LESSWASTE</a></li>
         <li><a class="link" href="https://www.homebook.pl/artykuly/4068/segregacja-smieci-w-domu-jak-prawidlowo-segregowac-odpady">INFO</a></li>
