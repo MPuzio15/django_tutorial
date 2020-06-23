@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color:
+}
+
+a{
+    color: #015B4A;
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+}
+
+.nav-wrapper{
+    background: url('./images/eko_city.jpg');
+    background-position: center;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 401px;
+}
+main{
+    width: 100%;
+    margin: 5rem 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.question{
+    padding: 0.7rem 4rem;
+    width: 100%;
+    height: 20%;
+    border: 1px solid gray;
+    margin: 0.9rem 0;
+    text-align: center;
+    line-height: 5vh;
+}
+.question:hover{
+    background-color: #93C294;
+    opacity: 0.8;
+
+}
+div.question > a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+main h1{
+    font-size: 1.1rem;
+    margin: 2rem 0;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+}
+main h4{
+    font-size: 1.0rem;
+    margin: 1rem 0;
+    text-align: center;
+}
+.brand-logo{
+    color: #015B4A;
+    letter-spacing: 0.7rem;
+    font-size: 1.5rem;
+    margin-top: 5rem;
+}
+.questionDetails{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 30vh;
+}
+form{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.questionDetails > p{
+    margin: 1rem 0;
+    font-size: 1.1rem;
+}
+.questionDetails input{
+    margin: 0.8rem 0;
+}
+.questionDetails li input{
+    margin-right: 0.5rem;
+}
+
+input.submit{
+    width: 100%;
+    padding: 0.5rem 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+footer{
+    width: 100%;
+    background-color: #47935A;
+    padding: 40px 0;
+}
+
+footer ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+    font-size: 0.7rem;
+    width: 100%;
+    height: 100%;
+}
+
+footer ul li{
+    flex-basis: 10%;
+}
+footer ul li a{
+    color: white;
+}
+
+
+@media()
+
+

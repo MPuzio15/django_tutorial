@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="questionDetails">
+    <p>Wyniki</p>
+    <ul>
+        {% for choice in question.choice_set.all %}
+        <li><b>{{ choice.choice_text }}</b>:  głosów: {{ choice.votes }}</li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

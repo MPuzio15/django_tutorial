@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<section class="questionDetails">
+    <p>Mozliwe odpowiedzi:</p>
+    <form method="POST" action="{% url 'polls:vote' question.id %}">
+        {% csrf_token %}
+        <ul>
+            {% for choice in question.choice_set.all %}
+            <li>
+                <label>
+                    <input type="radio" name="choice" value="{{choice.id}}">{{ choice.choice_text }}</label>
+            </li>
+            {% endfor %}
+        </ul>
+        <input type="submit" class="submit" value="Głosuj"></form>
+</section>
+{% endblock %}

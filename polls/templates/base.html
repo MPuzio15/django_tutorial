@@ -1,0 +1,33 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>EkoDom Ankieta &bull; {{ title }}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+</head>
+<body>
+
+<nav>
+    <div class="nav-wrapper">
+        <a href="{% url 'polls:main' %}" class="brand-logo">EkoDom</a>
+
+    </div>
+</nav>
+
+<main>
+    <h1>{{ title }}</h1>
+    {% block content %}
+    {% endblock %}
+</main>
+<footer>
+    <ul>
+        <li><a class="link" href="https://www.tekstualna.pl/less-waste-dla-poczatkujacych/">LESSWASTE</a></li>
+        <li><a class="link" href="https://www.homebook.pl/artykuly/4068/segregacja-smieci-w-domu-jak-prawidlowo-segregowac-odpady">INFO</a></li>
+        <li><a class="link" href="https://www.mojabutelka.pl/sposoby-na-ekologiczne-zycie/">TIPS</a></li>
+    </ul>
+
+</footer>
+</body>
+</html>
