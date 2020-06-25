@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils.datastructures import MultiValueDictKeyError
 
+from .forms import QuestionForm
 from .models import Question, Choice
 
 
@@ -58,24 +59,50 @@ def results(request, question_id):
 
 # 5. widok - create question
 
+
 def create_question(request):
+    #     context = {}
+
+    #     if request.method == "POST":
+    #         # pobranie danych
+    #         data = request.POST
+
+    #         # weryfikacja danych (musimy sprawdzic czy dane od uzytkownika sa poprawne)
+    #         question_text = data.get('question_text')  # zwroci element lub None
+    #         pub_date = data.get('pub_date')
+
+    #         if not question_text or not pub_date:
+    #             # weryfikacja sie nie powiodla - bledy w formularzu -> wyswietl info o bledach
+    #             context['errors'] = "Popraw bledy w formularzu"
+    #             context['question_text'] = question_text
+    #             context['pub_date'] = pub_date
+
+    #         else:
+    #             new_question = Question(
+    #                 question_text=question_text, pub_date=pub_date)
+    #             new_question.save()
+
+    #         # weryfikacja powiodla sie - dodaj nowe question, zapisz je i przekieruj na liste wszystkich pytan
+    #             return redirect('polls:detail', new_question.id)
+
+    #     return render(request, 'polls/create_question.html', context)
+    form = QuestionForm()
+
     if request.method == "POST":
-        #pobranie danych
-        data = request.POST
+        # pobranie danych
+        form = QuestionForm(request.POST)
 
-        # weryfikacja danych (musimy sprawdzic czy dane od uzytkownika sa poprawne)
-        question_text = data.get('question_text') #zwroci element lub None
-        pub_date = data.get('pub_date')
+        # weryfikacja danych
+        if form.is_valid():
+            # dane poprawne
+            new_question = Question(question_text=form.cleaned_data['question_text'],
+                                    pub_date=form.cleaned_data['pub_date'])
 
-        if question_text is None or pub_date is None:
-            pass
-            # weryfikacja sie nie powiodla - bledy w formularzu -> wyswietl info o bledach
+            new_question.save()
+            return redirect('polls:detail', new_question.id)
 
-            # sprawdzenie czy dostalismy question_text, pub_date
+    context = {
+        "form": form
+    }
 
-
-        # weryfikacja powiodla sie - dodaj nowe question, zapisz je i przekieruj na liste wszystkich pytan
-
-
-    context = {}
-    return render(request, 'polls/create_question.html', context)
+    return render(request, "polls/create_question.html", context)
