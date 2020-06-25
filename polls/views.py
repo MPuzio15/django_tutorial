@@ -55,3 +55,27 @@ def results(request, question_id):
         "title": title,
     }
     return render(request, 'polls/results.html', context)
+
+# 5. widok - create question
+
+def create_question(request):
+    if request.method == "POST":
+        #pobranie danych
+        data = request.POST
+
+        # weryfikacja danych (musimy sprawdzic czy dane od uzytkownika sa poprawne)
+        question_text = data.get('question_text') #zwroci element lub None
+        pub_date = data.get('pub_date')
+
+        if question_text is None or pub_date is None:
+            pass
+            # weryfikacja sie nie powiodla - bledy w formularzu -> wyswietl info o bledach
+
+            # sprawdzenie czy dostalismy question_text, pub_date
+
+
+        # weryfikacja powiodla sie - dodaj nowe question, zapisz je i przekieruj na liste wszystkich pytan
+
+
+    context = {}
+    return render(request, 'polls/create_question.html', context)

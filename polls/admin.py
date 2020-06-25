@@ -13,7 +13,7 @@ class ChoiceAdmin(admin.ModelAdmin):
     list_display = ['choice_text', 'question', 'votes']
     list_filter = ['choice_text', 'question']
     ordering = ['question', '-votes']
-    search_fields = ['choice_text', 'question']
+    search_fields = ['choice_text', 'question__question_text']
     autocomplete_fields = ['question']
 
 admin.site.register(Question, QuestionAdmin)
