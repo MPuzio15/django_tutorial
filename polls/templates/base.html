@@ -1,34 +1,41 @@
 {% load static%}
 <!DOCTYPE html>
 <html lang="en">
+<!-- musimy zaimportowac static zeby byla mozliwosc wykorzystania tego tagu static ponizej -->
 
 <head>
     <meta charset="UTF-8">
     <title>EkoDom Ankieta &bull; {{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
 </head>
+
 <body>
 
-<nav>
-    <a href="{% url 'polls:main' %}" class="main"><i class="fas fa-leaf"></i></a>
-    <div class="nav-wrapper">
-        <a href="{% url 'polls:main' %}" class="brand-logo">EkoDom</a>
-    </div>
-</nav>
+    <nav>
+        <a href="{% url 'polls:main' %}" class="main"><i class="fas fa-leaf"></i></a>
+        <div class="nav-wrapper">
+            <a href="{% url 'polls:main' %}" class="brand-logo">EkoDom</a>
+        </div>
+    </nav>
 
-<main>
-    <h1>{{ title }}</h1>
-    {% block content %}
-    {% endblock %}
-</main>
- <footer>
-    <ul>
-        <li><a class="link" href="https://www.tekstualna.pl/less-waste-dla-poczatkujacych/">LESSWASTE</a></li>
-        <li><a class="link" href="https://www.homebook.pl/artykuly/4068/segregacja-smieci-w-domu-jak-prawidlowo-segregowac-odpady">INFO</a></li>
-        <li><a class="link" href="https://www.mojabutelka.pl/sposoby-na-ekologiczne-zycie/">TIPS</a></li>
-    </ul>
+    <main>
+        <h1>{{ title }}</h1>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <ul>
+            <li><a class="link" href="https://www.tekstualna.pl/less-waste-dla-poczatkujacych/">LESSWASTE</a></li>
+            <li><a class="link"
+                    href="https://www.homebook.pl/artykuly/4068/segregacja-smieci-w-domu-jak-prawidlowo-segregowac-odpady">INFO</a>
+            </li>
+            <li><a class="link" href="https://www.mojabutelka.pl/sposoby-na-ekologiczne-zycie/">TIPS</a></li>
+        </ul>
 
-</footer>
+    </footer>
 </body>
+
 </html>

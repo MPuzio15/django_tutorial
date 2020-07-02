@@ -6,7 +6,9 @@
 <p style="color: red">Popraw formularz</p>
 {% endif %}
 
+<!-- action - mowi przegladarce zeby na ta strone zostal wyslany nasz formularz -->
 <form method="POST" action="{% url 'polls:create_question' %}">
+   <!-- tworzy dodatkowy dlugie id -->
    {% csrf_token %}
    <!-- <label for="id_question_text"> Treść pytania: </label>
    <input type="text" name="question_text" id="id_question_text" value="{{ question_text }}">

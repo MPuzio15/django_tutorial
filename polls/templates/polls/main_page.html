@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{%block content %}
+<section class='text'>
+    <p>Witamy na naszej stronie, dotyczącej środowiska i wspólnej odpowiedzialności za jego ochronę.</p>
+    <p>Klikając poniżej, zostaniesz przekierowany do ankiety, z której dowiesz się, czy prowadzisz ekologiczny tryb
+        życia.</p>
+    <p>Porównaj swoje odpowiedzi z odpowiedziami innych ankietowanych i
+        dowiedz się, co możesz zmienić, aby jeszcze bardziej przyczynić się do ochrony naszej planety. </p>
+    <p>Zapraszamy!</p>
+</section>
+<a class="go_to" href="{% url 'polls:main' %}">Przejdź do ankiety</a>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1> Dodawanie wyboru</h1>
+
+{% if form.errors %}
+<p> Napraw formularz</p>
+{% endif %}
+
+<form method="POST" action="{% url 'polls:create_choice' question.id %}">
+
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="Dodaj">
+</form>
+{% endblock %}
